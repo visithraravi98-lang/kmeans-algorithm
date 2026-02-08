@@ -1,0 +1,25 @@
+                            Implementing and Evaluating the K-Means Clustering Algorithm from Scratch
+
+Introduction
+K-Means is a popular unsupervised learning algorithm used to group unlabeled data into clusters based on similarity. It aims to minimize the distance between data points and their assigned cluster centroids. This project focuses on implementing the K-Means algorithm from scratch using NumPy to understand its internal working. The performance of the custom implementation is evaluated and compared with the scikit-learn K-Means algorithm using standard clustering metrics.
+
+Dataset Generation
+A synthetic dataset containing 500 samples with 5 features was generated using the make_blobs function. The dataset was designed to contain three overlapping clusters, making it suitable for evaluating clustering performance. Synthetic data allows controlled experimentation and easier interpretation of results.
+
+Custom K-Means Implementation
+The K-Means algorithm was implemented from scratch using NumPy. Centroids were initialized randomly from the dataset. In each iteration, data points were assigned to the nearest centroid using Euclidean distance (E-step). New centroids were then calculated as the mean of points within each cluster (M-step). The process continued until centroid movement fell below a tolerance threshold or the maximum number of iterations was reached.
+
+Evaluation and Comparison
+Clustering performance was evaluated using Inertia and Silhouette Score. The custom implementation and scikit-learn K-Means were both applied with K = 3. The scikit-learn model produced slightly better scores due to optimized initialization and multiple restarts. However, the custom implementation produced comparable and consistent clustering results.
+
+Interpretive Summary 
+The comparison between the custom K-Means implementation and the scikit-learn version reveals important insights into clustering behavior. The minor differences in inertia and silhouette scores are mainly due to initialization strategies and convergence stability. The custom implementation uses a single random initialization, which may lead to convergence at a local minimum. In contrast, scikit-learn applies multiple initializations and selects the best-performing solution, resulting in more stable outcomes. Additionally, scikit-learn benefits from optimized numerical computations, improving convergence efficiency.
+The presence of overlapping clusters in the dataset also contributes to moderate silhouette scores for both models, as some data points lie near cluster boundaries. Despite these factors, the custom implementation successfully captures the essential mechanics of the K-Means algorithm and produces results close to the benchmark model. This demonstrates that a correctly implemented algorithm from scratch can perform competitively while providing deeper insight into iterative optimization and distance-based clustering. Overall, the project emphasizes the importance of initialization, evaluation metrics, and benchmarking in unsupervised learning.
+
+Final Centroids (Custom K-Means – Text Output)
+Cluster 1: [x₁, x₂, x₃, x₄, x₅]
+Cluster 2: [x₁, x₂, x₃, x₄, x₅]
+Cluster 3: [x₁, x₂, x₃, x₄, x₅]
+
+Conclusion
+This project demonstrates a successful from-scratch implementation of the K-Means clustering algorithm using NumPy. The comparison with scikit-learn highlights both the strengths and limitations of a manual implementation while reinforcing core concepts in unsupervised learning.
